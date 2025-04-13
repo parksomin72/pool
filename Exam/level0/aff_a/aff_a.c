@@ -8,9 +8,11 @@ int main(int ac, char **av)
 
 		while (*s)
 		{
-			write(1, s, 1);
-			if (*(s + 1) != '\0')
-				write(1, "   ", 3);
+			if (*s == 'a')
+			{
+				write(1, "a", 1);
+				break;
+			}
 			s++;
 		}
 	}

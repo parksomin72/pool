@@ -1,29 +1,15 @@
-/*
- // test function
-#include <stdio.h>
-int ft_occ_a(char *str);
-int main(int ac, char **av)
-{
-	if (ac == 2)
-	{
-		char *s = av[1];
-		int count = ft_occ_a(s);
-		printf("the occu of char A is: %d", count);
-	}
-	printf("\n");
-	return (0);
-}
-*/
-int ft_occ_a(char *str)
+/**
+ * create a function that returns the number of 'A' in a given string.
+ */
+int occ__a(char *s)
 {
 	int count = 0;
 
-	while (*str)
+	while (*s)
 	{
-		if (*str == 'A')
+		if (*s == 'A')
 			count++;
-		str++;
+		s++;
 	}
-
 	return (count);
 }

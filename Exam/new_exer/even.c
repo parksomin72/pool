@@ -5,13 +5,11 @@ int main(int ac, char **av)
 	if (ac == 2)
 	{
 		int i = 0;
-		char *s = av[1];
 
-		while (*s)
+		while (av[1][i])
 		{
 			if (i % 2 == 0)
-				write(1, s, 1);
-			s++;
+				write(1, &av[1][i], 1);
 			i++;
 		}
 	}
