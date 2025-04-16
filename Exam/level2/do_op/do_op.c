@@ -8,9 +8,9 @@ void do_op(int num1, char s, int num2)
 		printf("%d", num1 - num2);
 	else if (s == '*')
 		printf("%d", num1 * num2);
-	else if (s == '/')
+	else if (s == '/' && num2 != 0)
 		printf("%d", num1 / num2);
-	else if (s == '%')
+	else if (s == '%' && num2 != 0)
 		printf("%d", num1 % num2);;
 
 }
