@@ -4,7 +4,7 @@ int main(int ac, char **av)
 {
 	if (ac >= 1)
 	{
-		char *s = av[1];
+		char *s = av[0];
 
 		while (*s)
 		{
