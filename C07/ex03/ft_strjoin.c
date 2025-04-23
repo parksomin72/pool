@@ -1,19 +1,22 @@
 #include <stdlib.h>
-int ft_strlen(char **s, int size)
+
+int ft_strlen(char *str)
 {
-	char *start;
+	int i = 0;
+
+	while (str[i])
+		i++;
+	return (i);
+}
+int ft_strlen_strs(char **str, int size)
+{
 	int len, i;
 
 	len = 0;
 	i = 0;
 	while (i < size)
 	{
-		start = s[i];
-		while (*start)
-		{
-			len++;
-			start++;
-		}
+		len += ft_strlen(str[i]);
 		i++;
 	}
 	return (len);
@@ -30,13 +33,9 @@ char *ft_strjoin(int size, char **strs, char *sep)
 	}
 
 
-	int total_size, len;
+	int total_size;
 
-	len = 0;
-	while (sep[len])
-		len++;
-
-	total_size = ft_strlen(strs, size) + 1 + (size - 1) * len;
+	total_size = ft_strlen_strs(strs, size) + 1 + (size - 1) * ft_strlen(sep);
 
 	char *s = (char *) malloc(total_size * sizeof(char));
 
