@@ -21,19 +21,22 @@ int ft_strlen(char **s, int size)
 
 char *ft_strjoin(int size, char **strs, char *sep)
 {
-	if (size < 0)
+	if (size <= 0)
 	{
-		return (NULL);
+		char *empty = malloc(1);
+		if (empty)
+			*empty = '\0';
+		return empty;
 	}
 
-	int total_size, strs_size, sep_size, len;
+
+	int total_size, len;
 
 	len = 0;
 	while (sep[len])
 		len++;
-	strs_size = ft_strlen(strs, size) + 1;
-	sep_size = (size - 1) * len;
-	total_size = strs_size + sep_size;
+
+	total_size = ft_strlen(strs, size) + 1 + (size - 1) * len;
 
 	char *s = (char *) malloc(total_size * sizeof(char));
 
