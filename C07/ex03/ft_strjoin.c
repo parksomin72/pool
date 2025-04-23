@@ -53,7 +53,7 @@ char *ft_strjoin(int size, char **strs, char *sep)
 		{
 			char *start_sep = sep;
 			while (*start_sep)
-				*start++ = *start_sep;
+				*start++ = *start_sep++;
 		}
 		i++;
 	}
