@@ -32,14 +32,3 @@ void ft_print_combn(int n)
     int T[10];
     ft_generate_comb(T, 0, n, 0);
 }
-
-#include <stdio.h>
-int main()
-{
-    int n;
-    write(1, "Enter your number: ", 19);
-    scanf("%d", &n);
-    ft_print_combn(n);
-    write(1, "\n", 1);
-    return 0;
-}
