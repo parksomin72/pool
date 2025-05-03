@@ -37,26 +37,29 @@ char *ft_strjoin(int size, char **strs, char *sep)
 
 	total_size = ft_strlen_strs(strs, size) + 1 + (size - 1) * ft_strlen(sep);
 
-	char *s = (char *) malloc(total_size * sizeof(char));
+	char *result = (char *) malloc(total_size * sizeof(char));
+
+	if (!result)
+		return (NULL);
 
 	int i = 0;
-	char *start = s;
+	char *result_ptr = result;
 
 	while (i < size)
 	{
 		char *current = strs[i];
 
 		while (*current)
-			*start++ = *current++;
+			*result_ptr++ = *current++;
 		if (i < size - 1)
 		{
 			char *start_sep = sep;
 			while (*start_sep)
-				*start++ = *start_sep++;
+				*result_ptr++ = *start_sep++;
 		}
 		i++;
 	}
-	*start = '\0';
+	*result_ptr = '\0';
 
-	return (s);
+	return (result);
 }
