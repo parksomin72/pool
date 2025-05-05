@@ -1,21 +1,18 @@
 #include "main.h"
 
-int main()
+int main(void)
 {
-	char c, n;
-
-	c = 'a';
-	n = '0';
+	char n = '0';
 
 	while (n <= '9')
 	{
 		_putchar(n);
+		if (n != '9')
+		{
+			_putchar(',');
+			_putchar(' ');
+		}
 		n++;
-	}
-	while (c <= 'f')
-	{
-		_putchar(c);
-		c++;
 	}
 	_putchar('\n');
 	return (0);

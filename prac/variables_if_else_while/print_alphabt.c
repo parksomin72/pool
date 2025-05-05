@@ -1,15 +1,15 @@
 #include "main.h"
 
-int main()
+int main(void)
 {
 	char c = 'a';
 
 	while (c <= 'z')
 	{
-		_putchar(c);
+		if (c != 'e' && c != 'q')
+			_putchar(c);
 		c++;
 	}
 	_putchar('\n');
-
 	return (0);
 }
